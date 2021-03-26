@@ -35,3 +35,52 @@ const exercicio21 = ()=>{
         }
     }
 }
+
+const exercicio22 = ()=>{
+    let coeficientes = (window.prompt('Insira os coeficientes')).split(' ');
+    if(coeficientes[0]==0){
+        window.alert('Impossivel calcular');
+    } else {
+        let delta = Math.pow(coeficientes[1],2) - (4*coeficientes[0]*coeficientes[2]);
+        console.log(`delta = ${delta}`);
+        if(delta<0){
+            window.alert('Impossivel calcular')
+        }else{
+            let bnegativo = coeficientes[1]*-1;
+            let x1 = (bnegativo+Math.sqrt(delta))/(2*coeficientes[0]);
+            let x2 = (bnegativo-Math.sqrt(delta))/(2*coeficientes[0]);
+            window.alert(`X1 = ${x1}\nX2 = ${x2}`);
+        }
+    }
+}
+
+const exercicio31 = ()=>{
+    let senhacorreta = 2002;
+    let validador = false;
+    while(validador == false){
+        let senhainserida = window.prompt('Insira a senha')
+        if(senhainserida == senhacorreta){
+            window.alert('Acesso Permitido');
+            validador=true;
+        }else{
+            window.alert('Senha Inválida');
+        }
+    }
+}
+
+const exercicio32 = ()=>{
+    let sumin = 0;
+    let sumout = 0;
+    let repeticoes = window.prompt('Insira a quantidade de valores que serão inseridos');
+    let aux = 0;
+    while(aux<repeticoes){
+        let valor = window.prompt('"Insira um valor');
+        if(valor>9&&valor<21){
+            sumin++;
+        }else{
+            sumout++
+        }
+        aux++;
+    }
+    window.alert(`${sumin} in\n${sumout} out`);
+}
